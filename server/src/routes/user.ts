@@ -20,10 +20,11 @@ const signupUser = async (req:Request,res:Response, next:NextFunction)=>{
     user.password = password;
     user.nickname = nickname;
 
-    
+    const test = await user.save();
+
     console.log(email, password, nickname )
 
-    res.send()
+    res.send(test)
 }
 
 
