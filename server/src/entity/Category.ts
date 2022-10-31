@@ -1,7 +1,7 @@
 import { BeforeInsert, Column, CreateDateColumn, Entity, Exclusion, Index, JoinColumn, ManyToMany, ManyToOne, OneToMany, OneToOne, UpdateDateColumn } from "typeorm";
 import {Exclude,Expose} from 'class-transformer'
 import { makeId } from "../utils/helpers";
-import {Product} from './Porduct.ts'
+import { Product } from './Product.ts'
 
 export default class Category {
     @Index()
@@ -30,7 +30,7 @@ export default class Category {
     @UpdateDateColumn()
     updatedAt:Date
 
-    @OneToOne(()=>Products,(product)=>product.category)
+    @OneToOne(()=> Products,(product)=>product.category)
     @JoinColumn({name:"identifier",referencedColumnName:"identifier"})
     products:Product[]
 
