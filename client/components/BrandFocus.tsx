@@ -13,7 +13,7 @@ function BrandFocus() {
           {/* map 함수가 return값이 필요해서 return 해와야 된다라고 오인 */}
           {BrandArray1.map((item, i) => (
             <div key={i}>
-              <Link href="/brands">
+              <Link href={`/brands/${i}`}>
                 <img
                   src={item?.ImageUrl}
                   className="w-[228px] ml-[4px] mr-[4px]"
