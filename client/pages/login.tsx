@@ -34,7 +34,7 @@ const Login = () => {
     }, 3000);
     reset();
   };
-  const onInValid = (data: FieldValues) => {};
+  const onInValid = console.log;
   const handleTransitionEnd = () => {
     router.push(navStates.to);
   };

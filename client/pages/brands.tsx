@@ -2,6 +2,7 @@ import React from "react";
 import { Item } from "../types";
 
 function Brands() {
+  
   return (
     <div className="w-[1280px] mt-[2rem] mb-[40px] mx-auto px-10">
       <div className="mt-[40px] mx-auto">
