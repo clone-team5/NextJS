@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Item } from "../../types";
 
 function Brands() {
+  const [isToggle, setIsToggle] = useState();
+
   return (
     /* Total Container */
     <div className="w-[1280px] mt-[2rem] mb-[40px] mx-auto px-10">
@@ -46,36 +48,75 @@ function Brands() {
       {/* Bottom (filter + betweenBtn + items) */}
       <div className="flex box-border relative my-0 mx-auto">
         {/* filter container */}
-        <div className="w-[210px] mr-[30px] pr-[10px] box-border justify-between items-center cursor-pointer">
+        <div className="w-[210px] mr-[10px] pr-[10px] box-border justify-between items-center cursor-pointer">
           <div className="m-0 pt-[23px] pb-[15px] text-[#222222] text-[14px] font-bold justify-between items-center">
             필터
           </div>
+
+          {/* 카테고리 & 모든 카테고리 */}
           {[1, 2, 3, 4, 5, 6].map((e) => (
             <div
               key={e}
-              className="m-0 py-[16px] border-solid border-b border-[#ebebeb] justify-between">
-              <div>
-                <div className="text-[13px] text-[#222222] font-bold">
-                  카테고리
+              className="box-border border-solid border-b border-[#ebebeb]">
+              <div className="flex m-0 py-[16px] box-border justify-between items-center">
+                <div className="flex flex-column cursor-pointer">
+                  <span className="text-[13px] text-[#222222] font-bold absolute">
+                    카테고리
+                  </span>
+                  <span className="mt-[24px] text-[15px] text-[#22222280] tracking-[-.15px] truncate">
+                    모든 카테고리
+                  </span>
                 </div>
-                <div className="mt-[4px] text-[15px] text-[#22222280] overflow-hidden">
-                  모든 카테고리
+
+                {/* + btn */}
+                <div className="m-0 p-0 h-[20px] cursor-pointer">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="gray"
+                    className="w-5 h-5">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 6v12m6-6H6"
+                    />
+                  </svg>
                 </div>
               </div>
-              <div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="gray"
-                  className="w-5 h-5">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 6v12m6-6H6"
-                  />
-                </svg>
+
+              {/* filter box (isToggle == 1) */}
+              <div className="m-0 p-0 pb-[24px] box-border">
+                <ul className="m-0 p-0 max-h-[315px] overflow-y-hidden box-border list-none">
+                  <li className="list-none">
+                    <label className="relative flex items-center cursor-pointer">
+                      <input
+                        className="w-[0.9px]"
+                        type="checkbox"
+                        value="신발"
+                      />
+                      {/*  <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth="1"
+                        className="w-[12px]">
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M4.5 12.75l6 6 9-13.5"
+                        />
+                      </svg> */}
+                      <span className="pl-2">신발</span>
+                    </label>
+                    {/*  <a className="text-[14px] tracking-[-.21px] no-underline items-start flex">
+                      <></>
+                    </a>
+                     */}
+                  </li>
+                </ul>
               </div>
             </div>
           ))}
