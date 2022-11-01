@@ -108,8 +108,8 @@ const Join = () => {
         className="w-36 h-36 bg-red-500"
         onClick={async () => {
           const data = await (
-            await fetch("http://localhost:4000/users/signup", {
-              headers: { "Content-type": "application/json" },
+            await fetch("/api/login", {
+              headers: { "Content-type": "application/json"},
               method: "POST",
               body: JSON.stringify({
                 email: "kwonga1@gmail.com",
