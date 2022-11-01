@@ -104,6 +104,23 @@ const Join = () => {
       )}
       onTransitionEnd={handleTransitionEnd}
     >
+      <div
+        className="w-36 h-36 bg-red-500"
+        onClick={async () => {
+          const data = await (
+            await fetch("/api/login", {
+              headers: { "Content-type": "application/json"},
+              method: "POST",
+              body: JSON.stringify({
+                email: "kwonga1@gmail.com",
+                password: "qwerqwer",
+                nickname: "minsu",
+              }),
+            })
+          ).json();
+          console.log("data", data);
+        }}
+      ></div>
       <form
         className="w-[400px] h-[756px] mx-auto pt-[60px] pb-40"
         onSubmit={handleSubmit(onValid, onInValid)}
